@@ -1,2 +1,2 @@
-# blaast
+# Blaast
 A blaast from the paast
