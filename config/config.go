@@ -6,9 +6,9 @@ import (
 )
 
 type Mongo struct {
-	HostURI           string
-	BlaastDB          string
-	MessageCollection string
+	HostURI          string
+	BlaastDB         string
+	BlaastCollection string
 }
 
 type Server struct {
@@ -53,14 +53,14 @@ func getMongoConfig() (*Mongo, error) {
 	if blaastDb == "" {
 		return nil, errors.New("missing blaastDb name in env")
 	}
-	messageCollection := os.Getenv("MONGODB_MESSAGE_COLLECTION")
-	if messageCollection == "" {
-		return nil, errors.New("missing message collection name in env")
+	blaastCollection := os.Getenv("MONGODB_BLAAST_COLLECTION")
+	if blaastCollection == "" {
+		return nil, errors.New("missing blaast collection name in env")
 	}
 
 	return &Mongo{
-		HostURI:           host,
-		BlaastDB:          blaastDb,
-		MessageCollection: messageCollection,
+		HostURI:          host,
+		BlaastDB:         blaastDb,
+		BlaastCollection: blaastCollection,
 	}, nil
 }

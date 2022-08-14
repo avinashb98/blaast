@@ -6,7 +6,7 @@ import (
 )
 
 type Status struct {
-	Message string `json:"message"`
+	Message string `json:"blaast"`
 }
 
 func GetStatus(c *gin.Context) {
